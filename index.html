@@ -76,6 +76,7 @@
           <tr><th scope="row">Journal</th><td>Textes libres, titres et associations volontaires à un ressenti</td><td>Sur votre appareil, dans le coffre local chiffré</td></tr>
           <tr><th scope="row">Plan de soutien</th><td>Signaux personnels, gestes utiles, contacts de confiance ou professionnels saisis par vous</td><td>Sur votre appareil, dans le coffre local chiffré</td></tr>
           <tr><th scope="row">Préférences</th><td>Activation et horaire des rappels, choix du thème clair/sombre/système, langue choisie (français/anglais/système), exercices effectués</td><td>Sur votre appareil ; notifications gérées par le système</td></tr>
+          <tr><th scope="row">Fichiers d’export</th><td>Copie chiffrée des humeurs, notes, plan de soutien, exercices et préférences, créée uniquement sur demande</td><td>Dans l’emplacement que vous choisissez avec le gestionnaire de fichiers du téléphone ; Juvem ne l’envoie pas au studio</td></tr>
           <tr><th scope="row">Messages au studio</th><td>Votre adresse e-mail, votre demande, un éventuel diagnostic technique transmis volontairement</td><td>Dans la messagerie de GolApp Studio et celle de votre prestataire de messagerie</td></tr>
           <tr><th scope="row">Navigation sur ce site</th><td>Informations techniques nécessaires au service web (par ex. adresse IP)</td><td>Susceptibles d'être traitées par GitHub Pages, notre hébergeur</td></tr>
         </tbody></table></div>
@@ -92,24 +93,26 @@
 
       <section id="securite" class="section">
         <span class="eyebrow">05 / Protection</span>
-        <h2>Un coffre local chiffré, avec des limites.</h2>
+        <h2>Un stockage local chiffré, avec des limites.</h2>
         <p>Juvem utilise un chiffrement local <strong>AES-256-GCM</strong> pour son coffre. Une clé est stockée avec les mécanismes de sécurité proposés par l'appareil, notamment <strong>Android Keystore</strong> ou <strong>iOS Keychain</strong> via les composants logiciels utilisés par l'application.</p>
         <p>Le transfert ou l'effacement complet de données peut dépendre du système d'exploitation. La sauvegarde standard de l'application est désactivée dans la configuration Android actuelle ; les comportements iOS et les sauvegardes de l'environnement doivent encore être audités. La sécurité absolue n'est jamais garantie, notamment en cas d'appareil compromis, d'accès physique non autorisé ou de capture d'écran.</p>
-        <p><strong>Attention :</strong> si la clé de chiffrement est perdue, les notes peuvent devenir irrécupérables. L'application ne propose pas actuellement de synchronisation de compte ni de récupération distante des données.</p>
+        <p><strong>Attention :</strong> si la clé locale de chiffrement est perdue, les notes peuvent devenir irrécupérables. L'application ne propose pas de synchronisation de compte ni de récupération distante des données.</p>
+        <p><strong>Export et import facultatifs :</strong> vous pouvez créer un fichier <code>.juvem</code> protégé par un mot de passe de 12 caractères minimum. L’export utilise AES-256-GCM et une clé dérivée du mot de passe par PBKDF2-HMAC-SHA256 avec un sel aléatoire. Le studio ne connaît ni ne récupère ce mot de passe. Si vous le perdez, la sauvegarde ne pourra pas être ouverte.</p>
+        <p>Le fichier reste à l’emplacement que vous choisissez. Une fois copié hors de l’application, sa conservation, son partage et sa suppression dépendent de vous et du service de stockage utilisé. Un import vérifie le mot de passe et l’intégrité du fichier, puis demande une confirmation avant de <strong>remplacer les données locales</strong>. Les rappels importés restent désactivés jusqu’à votre choix explicite.</p>
       </section>
 
       <section id="tiers" class="section">
         <span class="eyebrow">06 / Services externes</span>
         <h2>Que se passe-t-il quand vous quittez Juvem ?</h2>
         <p>Juvem peut proposer des liens vers des sources officielles d'aide et des numéros téléphoniques. Un lien web ouvre votre navigateur, où les règles de confidentialité du site visité s'appliquent. Un bouton téléphonique prépare l'appel dans l'application Téléphone de votre appareil : Juvem ne déclenche pas directement l'appel.</p>
-        <p>Les notifications facultatives sont assurées par les composants du système. Les e-mails de support passent par les services de messagerie que vous et GolApp Studio utilisez.</p>
+        <p>Les notifications facultatives sont assurées par les composants du système. Les e-mails de support passent par les services de messagerie que vous et GolApp Studio utilisez. Si vous enregistrez un fichier de sauvegarde dans un service externe (cloud, messagerie, espace partagé), ce service applique également ses propres conditions et règles de confidentialité.</p>
         <p>Ce site est hébergé par <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub Pages (politique de confidentialité GitHub)</a>. Son code ne comporte ni script analytique, ni publicité, ni formulaire ni stockage de suivi dans le navigateur. Cela ne signifie pas que l'hébergeur ne traite aucune donnée technique liée aux requêtes web.</p>
       </section>
 
       <section id="duree" class="section">
         <span class="eyebrow">07 / Conservation</span>
         <h2>Combien de temps les informations restent-elles ?</h2>
-        <p>Les contenus enregistrés dans Juvem restent sur l'appareil jusqu'à leur suppression par l'utilisateur, l'effacement du coffre ou un événement affectant le stockage de l'application. GolApp Studio n'en détient pas de copie de synchronisation.</p>
+        <p>Les contenus enregistrés dans Juvem restent sur l'appareil jusqu'à leur suppression par l'utilisateur, l'effacement du stockage ou un événement affectant l'application. GolApp Studio n'en détient pas de copie de synchronisation. <strong>Les sauvegardes exportées ne sont pas effacées automatiquement</strong> lorsque vous supprimez les données de l’application : vous devez également gérer les fichiers que vous avez créés.</p>
         <p>Les adresses fournies pour accéder au programme de test sont conservées tant que l'accès et le suivi du test sont nécessaires ; vous pouvez demander leur retrait à tout moment. Les échanges de support sont conservés pour le traitement et le suivi des demandes, puis supprimés lorsqu'ils ne sont plus nécessaires, sauf obligations légales. Les durées et suppressions effectives chez les prestataires externes dépendent également de leurs règles.</p>
         <p>Les données techniques de navigation éventuellement gérées par GitHub Pages sont soumises à la politique de GitHub, sur laquelle GolApp Studio n'a pas la même maîtrise que sur son propre code.</p>
       </section>
@@ -125,6 +128,7 @@
       <section id="tests" class="section">
         <span class="eyebrow">09 / Bêta-test Android</span>
         <h2>Participer ne demande pas de se dévoiler.</h2>
+        <p>Juvem Preview utilise un identifiant Android distinct (<code>com.golappstudio.juvem.preview</code>) et peut charger quatre scénarios contenant uniquement des données fictives. Les données de la Preview sont séparées de celles de Juvem. Les jeux de données sont générés localement et ne nécessitent aucun compte ni connexion au serveur.</p>
         <p>Si vous souhaitez rejoindre le test fermé Android, le studio vous demandera uniquement l'adresse du compte Google utilisé pour l'accès au programme et la confirmation que vous êtes majeur pour cette phase de test. Votre messagerie transmet ces informations dans un e-mail que vous choisissez d'envoyer.</p>
         <p>Vous pouvez ensuite envoyer des retours volontaires sur des bugs, des écrans ou des suggestions. <strong>N'envoyez pas le contenu de votre journal, de votre plan de soutien, des captures de données sensibles ou vos mots de passe.</strong> Un scénario fictif est suffisant pour décrire un problème.</p>
         <p>Pour quitter la liste des testeurs ou demander le retrait de votre e-mail, contactez le studio. Le fait de participer à un test n'impose pas de raconter sa situation personnelle.</p>
