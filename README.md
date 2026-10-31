@@ -2,16 +2,14 @@
 
 Politique publique en français pour **Juvem**, application de bien-être créée par **GolApp Studio**.
 
-- URL GitHub Pages prévue : https://shamsgolap.github.io/juvem-privacy/
+- URL publique GitHub Pages : https://shamsgolap.github.io/juvem-privacy/ (vérifier le rendu après chaque modification)
 - Dépôt : https://github.com/ShamsGolap/juvem-privacy
 - Portail testeurs : https://shamsgolap.github.io/juvem-testing/
 - Application : dépôt privé `ShamsGolap/juvem` (`develop`), `com.golappstudio.juvem`.
 
-## Publication (activation manuelle GitHub Pages)
+## Hébergement et mise à jour
 
-Dans le dépôt : **Settings → Pages → Build and deployment → Deploy from a branch → main / (root) → Save**.
-
-Ce dépôt statique n'a aucun script et aucun workflow Actions ajouté. Tant que Pages n'est pas activé, l'URL prévue **n'est pas attestée** comme accessible.
+Site statique maintenu sur `main / (root)` avec GitHub Pages. Aucun workflow GitHub Actions personnalisé dans ce dépôt ; les mécanismes de publication automatiques de GitHub Pages peuvent être activés par une mise à jour de la branche. Aucune exécution manuelle d'Actions n'est autorisée.
 
 ## Principes et points de vigilance
 
@@ -25,11 +23,11 @@ Ce dépôt statique n'a aucun script et aucun workflow Actions ajouté. Tant que
 
 ## Mise à jour du 31 octobre 2026
 
-La politique décrit les nouvelles préférences locales (thème système/clair/sombre et langue système/français/anglais). Elles sont enregistrées avec les autres préférences de Juvem ; aucune transmission au studio n'a été ajoutée. La date publique a été actualisée.
+La politique décrit les préférences locales (thème système/clair/sombre et langue système/français/anglais), la génération chiffrée de récupération, le transfert par fichier `.juvem` et la Preview fictive. Ces fonctionnalités sont en préparation et doivent encore être testées sur appareil. La date publique reste le 31 octobre 2026 pour cette revue.
 
 ## Version et diffusion
 
-La version applicative n'a pas encore été publiée sur Google Play. Le numéro actuellement déclaré dans `pubspec.yaml` reste inchangé tant que le propriétaire n'a pas validé le nom de la première bêta. Aucun lien de distribution Preview n'est annoncé sans vérification préalable.
+Juvem Bêta 1 (`0.1.0-beta.1+1`) est **validée comme numéro de version** et intégrée à `develop` via la PR #4. Aucune compilation Flutter, recette physique, diffusion Play Store ou APK Preview publique n'est attestée. La politique explique la copie locale chiffrée de récupération et les exports protégés par mot de passe ; les fichiers externes restent sous le contrôle de l'utilisateur.
 
 ## Sécurité
 
