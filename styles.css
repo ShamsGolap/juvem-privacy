@@ -46,3 +46,23 @@ th,td{border-bottom:1px solid #e4ebe4;padding:13px;vertical-align:top}thead{back
 @media(max-width:980px){.main{grid-template-columns:200px minmax(0,1fr);gap:30px}.summary-grid{grid-template-columns:1fr}}
 @media(max-width:720px){.container{width:calc(100% - 32px)}.nav{align-items:flex-start}.nav-links{justify-content:flex-end;gap:9px 14px;font-size:.8rem}.hero{padding:45px 0 60px}.main{display:block;padding:38px 0 60px}.toc{position:static;display:grid;grid-template-columns:repeat(2,1fr);margin-bottom:35px}.toc-title{grid-column:1/-1}.section{padding-bottom:35px;margin-bottom:35px}.summary-grid{grid-template-columns:1fr}.contact{padding:22px}.foot{display:block}.foot-links{margin:16px 0}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+
+/* Readability: wider whitespace and easy-to-touch navigation for all ages. */
+.hero{padding-top:clamp(54px,7vw,94px);padding-bottom:clamp(64px,8vw,110px)}
+.main{gap:clamp(38px,5vw,80px)}
+.section{padding-bottom:clamp(58px,7vw,86px);margin-bottom:clamp(58px,7vw,86px)}
+.section p,.section li{max-width:72ch;line-height:1.85}
+.summary-grid{gap:22px;margin:38px 0}
+.summary{padding:26px}
+.callout{padding:28px 30px;margin-top:32px}
+.toc a,.nav-links a,.foot-links a{min-height:44px;display:flex;align-items:center}
+.button{min-height:48px;padding:16px 25px}
+@media(max-width:720px){
+  .hero{padding-top:52px;padding-bottom:68px}
+  .main{padding-top:48px;padding-bottom:64px}
+  .section{padding-bottom:52px;margin-bottom:52px}
+  .summary{padding:26px}
+  .toc{gap:10px;margin-bottom:44px}
+  .contact{padding:28px}
+}
