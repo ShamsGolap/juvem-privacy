@@ -95,11 +95,11 @@
         <span class="eyebrow">05 / Protection</span>
         <h2>Un stockage local chiffré, avec des limites.</h2>
         <p>Juvem utilise un chiffrement local <strong>AES-256-GCM</strong> pour son coffre. Une clé est stockée avec les mécanismes de sécurité proposés par l'appareil, notamment <strong>Android Keystore</strong> ou <strong>iOS Keychain</strong> via les composants logiciels utilisés par l'application.</p>
-        <p>Pour mieux résister à une écriture interrompue, le stockage en préparation conserve aussi <strong>une seconde copie locale chiffrée et vérifiée</strong> de la génération précédente. Si le coffre principal est endommagé, Juvem peut récupérer cette copie et en avertir l'utilisateur ; certaines modifications très récentes peuvent manquer. L'effacement complet supprime également cette copie de secours.</p>
+        <p>Pour mieux résister à une écriture interrompue, Juvem prévoit <strong>une seconde copie locale chiffrée et vérifiée</strong> de la génération précédente. Si le coffre principal est endommagé, l’application peut tenter de récupérer cette copie et en avertir l’utilisateur ; certaines modifications récentes peuvent manquer. L’effacement complet vise aussi cette copie de secours. Ces mécanismes devront être validés sur appareil avant diffusion.</p>
         <p>Le transfert ou l'effacement complet de données peut dépendre du système d'exploitation. La sauvegarde standard de l'application est désactivée dans la configuration Android actuelle ; les comportements iOS et les sauvegardes de l'environnement doivent encore être audités. La sécurité absolue n'est jamais garantie, notamment en cas d'appareil compromis, d'accès physique non autorisé ou de capture d'écran.</p>
         <p><strong>Attention :</strong> si la clé locale de chiffrement est perdue, les notes peuvent devenir irrécupérables. L'application ne propose pas de synchronisation de compte ni de récupération distante des données.</p>
-        <p><strong>Export et import facultatifs :</strong> vous pouvez créer un fichier <code>.juvem</code> protégé par un mot de passe de 12 caractères minimum. L’export utilise AES-256-GCM et une clé dérivée du mot de passe par PBKDF2-HMAC-SHA256 avec un sel aléatoire. Le studio ne connaît ni ne récupère ce mot de passe. Si vous le perdez, la sauvegarde ne pourra pas être ouverte.</p>
-        <p>Le fichier reste à l’emplacement que vous choisissez. Une fois copié hors de l’application, sa conservation, son partage et sa suppression dépendent de vous et du service de stockage utilisé. Un import vérifie le mot de passe et l’intégrité du fichier, puis demande une confirmation avant de <strong>remplacer les données locales</strong>. Les rappels importés restent désactivés jusqu’à votre choix explicite.</p>
+        <p><strong>Export et import facultatifs :</strong> dans la version en préparation, vous pourrez créer un fichier <code>.juvem</code> protégé par un mot de passe de 12 caractères minimum. L’export utilise AES-256-GCM et une clé dérivée du mot de passe par PBKDF2-HMAC-SHA256 avec un sel aléatoire. Le studio ne connaît ni ne récupère ce mot de passe. Si vous le perdez, la sauvegarde ne pourra pas être ouverte.</p>
+        <p>Le fichier d’export reste à l’emplacement que vous choisissez. Une fois copié hors de l’application, sa conservation, son partage et sa suppression dépendent de vous et du service de stockage utilisé. Un import vérifie le mot de passe et l’intégrité du fichier, puis demande une confirmation avant de <strong>remplacer les données locales</strong>. Les rappels importés restent désactivés jusqu’à votre choix explicite.</p>
       </section>
 
       <section id="tiers" class="section">
@@ -121,7 +121,7 @@
       <section id="droits" class="section">
         <span class="eyebrow">08 / Contrôle</span>
         <h2>Vos données restent sous votre contrôle.</h2>
-        <p>Dans Juvem, vous pouvez supprimer des notes et des ressentis, désactiver les rappels, et utiliser <strong>Paramètres → Effacer toutes mes données</strong> pour supprimer le coffre et sa clé. Cette opération est conçue pour être irréversible ; assurez-vous de ne plus avoir besoin de vos données avant de la confirmer.</p>
+        <p>Dans Juvem, vous pouvez supprimer des notes et des ressentis, désactiver les rappels, et utiliser <strong>Paramètres → Effacer toutes mes données</strong> pour supprimer le coffre, sa copie locale de récupération et sa clé. Cette opération est conçue pour être irréversible ; assurez-vous de ne plus avoir besoin de vos données avant de la confirmer.</p>
         <p>Pour les informations communiquées directement à GolApp Studio par e-mail, vous pouvez demander l'accès, la rectification, l'effacement ou l'opposition lorsque ces droits sont applicables. Écrivez à <a href="mailto:golappstudio.support@gmail.com?subject=Juvem%20-%20Exercice%20de%20mes%20droits">golappstudio.support@gmail.com</a>, sans joindre de données intimes inutiles.</p>
         <p>Selon votre situation et la réglementation applicable, vous pouvez également saisir la <a href="https://www.cnil.fr/fr/plaintes">CNIL</a>. Une demande adressée au studio ne peut pas restaurer ou consulter vos données locales chiffrées auxquelles il n'a pas accès.</p>
       </section>
@@ -129,7 +129,7 @@
       <section id="tests" class="section">
         <span class="eyebrow">09 / Bêta-test Android</span>
         <h2>Participer ne demande pas de se dévoiler.</h2>
-        <p>Juvem Preview utilise un identifiant Android distinct (<code>com.golappstudio.juvem.preview</code>) et peut charger quatre scénarios contenant uniquement des données fictives. Les données de la Preview sont séparées de celles de Juvem. Les jeux de données sont générés localement et ne nécessitent aucun compte ni connexion au serveur.</p>
+        <p>Juvem Preview est conçue avec un identifiant Android distinct (<code>com.golappstudio.juvem.preview</code>) et quatre scénarios contenant uniquement des données fictives. Le stockage de cette Preview est séparé de celui de l’application principale. Ces fonctions doivent encore être vérifiées sur téléphone avant toute distribution ; aucun compte ni serveur applicatif n’est requis.</p>
         <p>Si vous souhaitez rejoindre le test fermé Android, le studio vous demandera uniquement l'adresse du compte Google utilisé pour l'accès au programme et la confirmation que vous êtes majeur pour cette phase de test. Votre messagerie transmet ces informations dans un e-mail que vous choisissez d'envoyer.</p>
         <p>Vous pouvez ensuite envoyer des retours volontaires sur des bugs, des écrans ou des suggestions. <strong>N'envoyez pas le contenu de votre journal, de votre plan de soutien, des captures de données sensibles ou vos mots de passe.</strong> Un scénario fictif est suffisant pour décrire un problème.</p>
         <p>Pour quitter la liste des testeurs ou demander le retrait de votre e-mail, contactez le studio. Le fait de participer à un test n'impose pas de raconter sa situation personnelle.</p>
@@ -140,7 +140,7 @@
         <span class="eyebrow">10 / Transparence</span>
         <h2>Un outil de bien-être, pas un service médical.</h2>
         <p>Juvem propose des exercices de bien-être et d'auto-observation. L'application ne pose pas de diagnostic, ne traite pas un trouble, ne surveille pas les situations de crise et ne remplace pas un médecin, un psychologue ou les services de secours.</p>
-        <p>La première version bêta prévue de Juvem porte le numéro <strong>0.1.0-beta.1</strong>. Elle n’a pas encore été distribuée sur Google Play.</p>
+        <p>La première version bêta porte le numéro <strong>0.1.0-beta.1</strong>. Son code est intégré dans la branche de développement, mais la compilation Android et les essais sur appareil restent à valider. Elle n’a pas encore été distribuée sur Google Play.</p>
         <p>La présente politique décrit la version en préparation au <strong>31 octobre 2026</strong>. Elle sera adaptée si les fonctionnalités, les prestataires ou les obligations légales évoluent. La date de mise à jour sera révisée. Les aspects juridiques et techniques feront encore l'objet de contrôles avant une diffusion large.</p>
       </section>
 
